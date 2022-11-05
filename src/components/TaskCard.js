@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const TaskCard = ({ task, onDelete }) => {
   const handleDelete = async () => {
     const { data, error } = await supabase
-      .from('recipes')
+      .from('challenges')
       .delete()
       .eq('id', task.id)
     
@@ -20,7 +20,7 @@ const TaskCard = ({ task, onDelete }) => {
   }
   const handleDone = async (status) => {
     const { data, error } = await supabase
-      .from('recipes')
+      .from('challenges')
       .update({done:status})
       .eq('id', task.id)
     

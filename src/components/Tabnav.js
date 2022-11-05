@@ -9,7 +9,7 @@ function Tabnav() {
   const [fetchError, setFetchError] = useState(null)
   const [atasks, setActiveTasks] = useState(null)
   const [dtasks, setDoneTasks] = useState(null)
-  const [orderBy, setOrderBy] = useState('created_at')
+  const [orderBy, setOrderBy] = useState('date')
 
   const handleDelete = (id) => {
     setActiveTasks(prevTasks => {
@@ -24,10 +24,10 @@ function Tabnav() {
    useEffect(() => {
     const fetchActiveTasks = async () => {
       const { data, error } = await supabase
-        .from('recipes')
+        .from('challenges')
         .select()
         .eq('done',false)
-        .order(orderBy, {ascending: false})
+        .order(orderBy, {ascending: true})
       
       if (error) {
         setFetchError('Could not fetch the active challenges')
@@ -40,10 +40,10 @@ function Tabnav() {
     }
     const fetchDoneTasks = async () => {
       const { data, error } = await supabase
-        .from('recipes')
+        .from('challenges')
         .select()
         .eq('done',true)
-        .order(orderBy, {ascending: false})
+        .order(orderBy, {ascending: true})
       
       if (error) {
         setFetchError('Could not fetch the done challenges')
@@ -86,9 +86,9 @@ function Tabnav() {
        </div>
        <div className="order-by">
             <p>Order by:</p>
-            <button onClick={() => setOrderBy('created_at')}>Time Created</button>
+            <button onClick={() => setOrderBy('date')}>EndDate</button>
             <button onClick={() => setOrderBy('title')}>Title</button>
-            <button onClick={() => setOrderBy('rating')}>Rating</button>
+            <button onClick={() => setOrderBy('rating')}>Priority</button>
           </div>
       </Tab>
       <Tab eventKey="done" title="Completed Challenges">
@@ -109,9 +109,9 @@ function Tabnav() {
         </div>
           <div className="order-by">
             <p>Order by:</p>
-            <button onClick={() => setOrderBy('created_at')}>Time Created</button>
+            <button onClick={() => setOrderBy('date')}>EndDate</button>
             <button onClick={() => setOrderBy('title')}>Title</button>
-            <button onClick={() => setOrderBy('rating')}>Rating</button>
+            <button onClick={() => setOrderBy('rating')}>Priority</button>
           </div>
       </Tab>
     </Tabs>
