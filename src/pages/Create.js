@@ -20,7 +20,7 @@ const Create = () => {
     }
 
     const { data, error } = await supabase
-      .from('recipes')
+      .from('challenges')
       .insert([{ title, method, rating, date }])
 
     if (error) {
