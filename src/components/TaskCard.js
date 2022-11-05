@@ -29,7 +29,6 @@ const TaskCard = ({ task, onDelete }) => {
     }
     if (data) {
       console.log(data)
-      //onDone(task.id)
     }
    window.location.reload();
   }

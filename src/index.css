@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
 :root {
-  --primary: #680413;
-  --secondary: #b00029;
+  --primary: #aa0606;
+  --secondary: #1f1e20;
 }
-h1,h2,h3 {
+
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -11,21 +15,25 @@ body {
   margin: 0;
   color: rgb(255, 255, 255);
   font-family: 'Poppins';
-  background: #262525;
+  background: #000000;
 }
+
 nav {
   background: var(--primary);
   padding: 10px 20px;
   text-align: center;
 }
+
 nav a {
   color: #f2f2f2;
   margin: 10px;
   display: inline-block;
 }
+
 nav h1 {
   color: #fff;
 }
+
 .page {
   max-width: 1200px;
   margin: 20px auto;
@@ -39,14 +47,16 @@ nav h1 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
+
 .smoothie-card {
   width: 100%;
   padding: 10px;
-  background: rgb(11, 11, 11);
+  background: #fff;
   box-sizing: border-box;
   border-radius: 6px;
   position: relative;
 }
+
 .smoothie-card .rating {
   position: absolute;
   top: -10px;
@@ -60,38 +70,43 @@ nav h1 {
   line-height: 0px;
   text-align: center;
 }
+
 .smoothie-card .buttons {
   text-align: right;
 }
+
 .smoothie-card i {
-  color: rgb(196, 13, 13);
+  color: #bbb;
   margin-left: 10px;
   font-size: 1.2em;
   padding: 6px;
-  background: rgb(10, 10, 10);
+  background: #eee;
   border-radius: 50%;
   cursor: pointer;
 }
 
 /* forms */
 form {
-  background: rgb(80, 16, 16);
+  background: #fff;
   padding: 20px;
   max-width: 480px;
   margin: 0 auto;
   border-radius: 6px;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   display: block;
   width: 100%;
   padding: 6px;
   box-sizing: border-box;
-  border: 1px solid rgb(55, 28, 28);
+  border: 1px solid #ccc;
   margin: 10px 0 20px 0;
 }
+
 form button {
   background: var(--primary);
-  color: rgb(160, 155, 155);
+  color: #fff;
   border: 0;
   border-radius: 6px;
   padding: 6px 8px;
