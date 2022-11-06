@@ -19,13 +19,12 @@ export default function Login() {
       setLoading(false)
     }
   }
-
   return (
-    <div className="row flex-center flex">
-        <style>{'body { background-color: black; }'}</style>
-      <div className="col-6 form-widget" aria-live="polite">
+    <div className="row" >
+       {/*<style>{'body { background-color: black; }'}</style>*/}
+      <div className="form" aria-live="polite">
         <h1>Fitness Tracker</h1>
-        <p className="description">Sign in via magic link with your email below</p>
+        <p align = "center" className=".login">Sign in via magic link with your email below</p>
         {loading ? (
           'Sending magic link...'
         ) : (
