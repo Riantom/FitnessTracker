@@ -5,9 +5,7 @@ import  supabase  from "./config/supabaseClient";
 import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Update from "./pages/Update"
-import Login from "./pages/Login"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Signup from './pages/Signup'
 import Login from './pages/Login'
 
 
@@ -44,7 +42,6 @@ function App() {
       </nav>
       <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/:id" element={<Update />} />
