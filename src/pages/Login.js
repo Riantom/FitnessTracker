@@ -27,9 +27,9 @@ export default function Login() {
         <br/>
         <p className="login"align="center" >Sign in via magic link with your email below</p>
          <br/>
-        {loading ? (
-          'Sending magic link...'
-        ) : (
+        {loading ? (<h3 >
+          Sending magic link...
+        </h3>) : (
           <form onSubmit={handleLogin}>
             <label htmlFor="email">Email</label>
             <input
