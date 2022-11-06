@@ -2,27 +2,24 @@
 
 :root {
   --primary: #000000;
-  --secondary: #400d8b;
+  --secondary: #00ff22;
   --tertiary:#ffffff;
 }
 
-h1
-{
+h1{
   text-align: center;
-  color: rgb(0, 223, 67);
+  color: #00ff0d;
 }
 h2,
 h3 {
-
+  
   margin: 0;
   color: rgb(0, 223, 67);
 }
 
-.login
-{
-  color: #f2f2f2;
+.login {
+  color: #ffffff;
 }
-
 body {
   margin: 0;
   color: rgb(9, 227, 74);
@@ -60,7 +57,10 @@ nav h1 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
-
+.heading{
+  font-size: 500px;
+  font-weight:bold;
+}
 .smoothie-card {
   color: #fff;
   width: 100%;
@@ -153,4 +153,9 @@ form button {
   background-repeat: no-repeat;
   background-size: cover;
   
+}
+
+.text
+{
+  color: #fff;
 }

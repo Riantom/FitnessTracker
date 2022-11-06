@@ -20,11 +20,13 @@ export default function Login() {
     }
   }
   return (
-    <div className="row" >
-       {/*<style>{'body { background-color: black; }'}</style>*/}
-      <div className="form" aria-live="polite">
-        <h1>Fitness Tracker</h1>
-        <p align = "center" className=".login">Sign in via magic link with your email below</p>
+    <div className="row">
+        {/*<style>{'body { background-color: black; }'}</style>*/}
+      <div className="form" >
+        <h1>UnChallenged</h1>
+        <br/>
+        <p className="login"align="center" >Sign in via magic link with your email below</p>
+         <br/>
         {loading ? (
           'Sending magic link...'
         ) : (

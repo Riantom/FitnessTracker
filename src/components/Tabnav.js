@@ -73,7 +73,7 @@ function Tabnav() {
       onSelect={(k) => setKey(k)}
       className="mb-3"
     >
-      <Tab eventKey="active" title="Ongoing Challenges">
+      <Tab eventKey="active" className='text' title="Ongoing Challenges">
         {fetchError && (<p>{fetchError}</p>)}
         <div className="page home">
       {atasks &&(
@@ -96,7 +96,7 @@ function Tabnav() {
             <button onClick={() => setOrderBy('rating')}>Priority</button>
           </div>
       </Tab>
-      <Tab eventKey="done" title="Completed Challenges">
+      <Tab eventKey="done" className='text' title="Completed Challenges">
         {fetchError && (<p>{fetchError}</p>)}
            <div className="page home">
       {dtasks &&(

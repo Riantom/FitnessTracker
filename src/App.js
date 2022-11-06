@@ -5,8 +5,10 @@ import  supabase  from "./config/supabaseClient";
 import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Update from "./pages/Update"
+import Login from "./pages/Login"
+import Navi from "./components/Navi";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './pages/Login'
+
 
 
 function App() {
@@ -33,15 +35,7 @@ function App() {
       {!session ? <Login /> :
     <div>
     <BrowserRouter>
-    
-      <nav>
-        <h1>Fitness Tracker</h1>
-        <Link to="/">Home</Link>
-        <Link to="/create">Create New Challenge</Link>
-        <div className="order-by">
-          <button  onClick={handleSignOut}>Sign out</button>
-          </div>
-      </nav>
+      <Navi/>
       <Routes>
       <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
