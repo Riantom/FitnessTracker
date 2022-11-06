@@ -9,18 +9,19 @@ import Login from "./pages/Login"
 import Navi from "./components/Navi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
-  const [session, setSession] = useState(null)
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
 
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-  }, [])
+    const [session, setSession] = useState(null)
+    useEffect(() => {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session)
+      })
+  
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session)
+      })
+    }, [])
+    
   
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
     <BrowserRouter>
       <Navi/>
       <Routes>
+      <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/:id" element={<Update />} />
