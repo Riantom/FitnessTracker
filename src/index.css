@@ -1,32 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
 :root {
-  --primary: #680413;
-  --secondary: #b00029;
-}
-h1,h2,h3 {
-  margin: 0;
+  --primary: #000000;
+  --secondary: #00ff22;
+  --tertiary:#ffffff;
 }
 
+h1{
+  text-align: center;
+  color: #00ff0d;
+}
+h2,
+h3 {
+  
+  margin: 0;
+  color: rgb(0, 223, 67);
+}
+
+.login {
+  color: #ffffff;
+}
 body {
   margin: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(9, 227, 74);
   font-family: 'Poppins';
-  background: #262525;
+  background: #09bcb3;
 }
+
 nav {
-  background: var(--primary);
+  background: var(--secondary);
   padding: 10px 20px;
   text-align: center;
 }
+
 nav a {
   color: #f2f2f2;
   margin: 10px;
   display: inline-block;
 }
+
 nav h1 {
   color: #fff;
 }
+
 .page {
+  background: var(--primary);
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
@@ -39,14 +57,19 @@ nav h1 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
+.heading{
+  font-size: 100px;
+}
 .smoothie-card {
+  color: #fff;
   width: 100%;
   padding: 10px;
-  background: rgb(11, 11, 11);
+  background: rgb(32, 31, 31);
   box-sizing: border-box;
   border-radius: 6px;
   position: relative;
 }
+
 .smoothie-card .rating {
   position: absolute;
   top: -10px;
@@ -60,38 +83,44 @@ nav h1 {
   line-height: 0px;
   text-align: center;
 }
+
 .smoothie-card .buttons {
   text-align: right;
 }
+
 .smoothie-card i {
-  color: rgb(196, 13, 13);
+  color: var(--secondary);
   margin-left: 10px;
   font-size: 1.2em;
   padding: 6px;
-  background: rgb(10, 10, 10);
+  background: rgb(0, 0, 0);
   border-radius: 50%;
   cursor: pointer;
 }
 
 /* forms */
 form {
-  background: rgb(80, 16, 16);
+  background: rgb(42, 40, 40);
+  color: var(--secondary);
   padding: 20px;
   max-width: 480px;
   margin: 0 auto;
   border-radius: 6px;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   display: block;
   width: 100%;
   padding: 6px;
   box-sizing: border-box;
-  border: 1px solid rgb(55, 28, 28);
+  border: 1px solid rgb(81, 81, 81);
   margin: 10px 0 20px 0;
 }
+
 form button {
-  background: var(--primary);
-  color: rgb(160, 155, 155);
+  background: var(--secondary);
+  color: rgb(255, 255, 255);
   border: 0;
   border-radius: 6px;
   padding: 6px 8px;
@@ -102,7 +131,7 @@ form button {
 /* order-by buttons */
 .order-by button {
   margin-right: 10px;
-  background: var(--primary);
+  background: var(--secondary);
   color: #fff;
   border: 0;
   padding: 4px 8px;

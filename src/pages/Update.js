@@ -9,7 +9,8 @@ const Update = () => {
   const [title, setTitle] = useState('')
   const [method, setMethod] = useState('')
   const [rating, setRating] = useState('')
-  const [date, setDate] = useState('')
+  const [sdate, setSDate] = useState('')
+  const [edate, setEDate] = useState('')
   const [done, setDone] = useState('')
   const [formError, setFormError] = useState(null)
 
@@ -20,25 +21,25 @@ const Update = () => {
       setFormError('Please fill in all the fields correctly.')
       return
     }
-
-    const { data, error } = await supabase
-      .from('recipes')
-      .update({ title, method, rating, date, done })
+    
+    const { error } = await supabase
+      .from('challenges')
+      .update({ title, method, rating, sdate,edate, done })
       .eq('id', id)
 
     if (error) {
       setFormError('Please fill in all the fields correctly.')
     }
-    if (data) {
+    else {
       setFormError(null)
       navigate('/')
     }
   }
 
   useEffect(() => {
-    const fetchSmoothie = async () => {
+    const fetchTasks = async () => {
       const { data, error } = await supabase
-        .from('recipes')
+        .from('challenges')
         .select()
         .eq('id', id)
         .single()
@@ -50,12 +51,12 @@ const Update = () => {
         setTitle(data.title)
         setMethod(data.method)
         setRating(data.rating)
-        setDate(data.date)
+        setSDate(data.sdate)
+        setEDate(data.edate)
         setDone(data.done)
       }
     }
-
-    fetchSmoothie()
+    fetchTasks()
   }, [id, navigate])
 
   return (
@@ -83,14 +84,21 @@ const Update = () => {
           value={rating}
           onChange={(e) => setRating(e.target.value)}
         />
-        <label htmlFor="date">Target Date:</label>
+        <label htmlFor="sdate">Start Date:</label>
         <input 
           type="date"
-          id="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+          id="sdate"
+          value={sdate}
+          onChange={(e) => setSDate(e.target.value)}
         />
         
+        <label htmlFor="edate">End Date:</label>
+        <input 
+          type="date"
+          id="edate"
+          value={edate}
+          onChange={(e) => setEDate(e.target.value)}
+        />
 
         <button>Update Challenge</button>
 
