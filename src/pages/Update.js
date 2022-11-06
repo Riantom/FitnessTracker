@@ -21,8 +21,8 @@ const Update = () => {
       setFormError('Please fill in all the fields correctly.')
       return
     }
-
-    const { data, error } = await supabase
+    
+    const { error } = await supabase
       .from('challenges')
       .update({ title, method, rating, sdate,edate, done })
       .eq('id', id)
@@ -37,7 +37,7 @@ const Update = () => {
   }
 
   useEffect(() => {
-    const fetchSmoothie = async () => {
+    const fetchTasks = async () => {
       const { data, error } = await supabase
         .from('challenges')
         .select()
@@ -56,8 +56,7 @@ const Update = () => {
         setDone(data.done)
       }
     }
-
-    fetchSmoothie()
+    fetchTasks()
   }, [id, navigate])
 
   return (

@@ -19,10 +19,10 @@ const Create = () => {
       setFormError('Please fill in all the fields correctly.')
       return
     }
-
+    const { data: { user } } = await supabase.auth.getUser()
     const { data, error } = await supabase
       .from('challenges')
-      .insert([{ title, method, rating, sdate, edate }])
+      .insert([{ title, method, rating, sdate, edate,user_id: user?.id }])
 
     if (error) {
       console.log(error)

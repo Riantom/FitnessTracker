@@ -22,10 +22,13 @@ function Tabnav() {
     })
   }
    useEffect(() => {
+    
     const fetchActiveTasks = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('challenges')
         .select()
+        .eq("user_id", user?.id)
         .eq('done',false)
         .order(orderBy, {ascending: true})
       
@@ -39,9 +42,11 @@ function Tabnav() {
       }
     }
     const fetchDoneTasks = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('challenges')
         .select()
+        .eq("user_id", user?.id)
         .eq('done',true)
         .order(orderBy, {ascending: true})
       
