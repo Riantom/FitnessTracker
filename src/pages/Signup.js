@@ -2,14 +2,14 @@ import { useRef, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-const Login= () => {
+const Signup = ()=> {
   const emailRef = useRef()
   const passwordRef = useRef()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
-    // @TODO: add login logic
+    // @TODO: add sign up logic
   }
 
   return (
@@ -23,16 +23,15 @@ const Login= () => {
 
         <br />
 
-        <button type="submit">Login</button>
+        <button type="submit">Sign up</button>
       </form>
+
       <br />
 
-
-{/* Add this 👇 */}
-<p>
-  Don't have an account? <Link to="/signup">Sign Up</Link>
-</p>
+      <p>
+        Already have an account? <Link to="/login">Log In</Link>
+      </p>
     </>
   )
 }
-export default Login
+export default Signup
