@@ -38,7 +38,9 @@ function App() {
         <h1>Fitness Tracker</h1>
         <Link to="/">Home</Link>
         <Link to="/create">Create New Challenge</Link>
-        <a onClick={handleSignOut}>Sign out</a>
+        <div className="order-by">
+          <button  onClick={handleSignOut}>Sign out</button>
+          </div>
       </nav>
       <Routes>
       <Route path="/login" element={<Login />} />

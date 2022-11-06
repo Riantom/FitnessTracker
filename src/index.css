@@ -2,14 +2,15 @@
 
 :root {
   --primary: #000000;
-  --secondary: #0011ff;
-  --tertiary:#ff0000;
+  --secondary: #400d8b;
+  --tertiary:#ffffff;
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
+  color: rgb(0, 223, 67);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 }
 
 nav {
-  background: var(--primary);
+  background: var(--secondary);
   padding: 10px 20px;
   text-align: center;
 }
@@ -79,7 +80,7 @@ nav h1 {
 }
 
 .smoothie-card i {
-  color: var(--tertiary);
+  color: var(--secondary);
   margin-left: 10px;
   font-size: 1.2em;
   padding: 6px;
@@ -90,7 +91,8 @@ nav h1 {
 
 /* forms */
 form {
-  background: rgb(32, 31, 31);
+  background: rgb(42, 40, 40);
+  color: var(--secondary);
   padding: 20px;
   max-width: 480px;
   margin: 0 auto;
@@ -108,8 +110,8 @@ form textarea {
 }
 
 form button {
-  background: var(--primary);
-  color: rgb(160, 155, 155);
+  background: var(--secondary);
+  color: rgb(255, 255, 255);
   border: 0;
   border-radius: 6px;
   padding: 6px 8px;
@@ -120,7 +122,7 @@ form button {
 /* order-by buttons */
 .order-by button {
   margin-right: 10px;
-  background: var(--primary);
+  background: var(--secondary);
   color: #fff;
   border: 0;
   padding: 4px 8px;

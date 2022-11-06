@@ -22,6 +22,7 @@ export default function Login() {
 
   return (
     <div className="row flex-center flex">
+        <style>{'body { background-color: black; }'}</style>
       <div className="col-6 form-widget" aria-live="polite">
         <h1>Fitness Tracker</h1>
         <p className="description">Sign in via magic link with your email below</p>
