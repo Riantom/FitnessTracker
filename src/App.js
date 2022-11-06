@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Update from "./pages/Update"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Auth from './pages/Auth'
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/create">Create New Challenge</Link>
       </nav>
+      <div>
+        <Auth/>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
