@@ -21,13 +21,7 @@ function App() {
       setSession(session)
     })
   }, [])
-  const handleSignOut=async ()=>{
-    const { error } = await supabase.auth.signOut()
-    if(!error){
-      setSession(null)
-
-    }
-  }
+  
   return (
     <>
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
