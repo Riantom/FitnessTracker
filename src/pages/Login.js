@@ -19,14 +19,13 @@ export default function Login() {
       setLoading(false)
     }
   }
-
   return (
-    <div className="login"align="center">
-        <style>{'body { background-color: black; }'}</style>
+    <div className="row">
+        {/*<style>{'body { background-color: black; }'}</style>*/}
       <div className="form" >
-        <h1>Fitness Tracker</h1>
+        <h1>UnChallenged</h1>
         <br/>
-        <p  >Sign in via magic link with your email below</p>
+        <p className="login"align="center" >Sign in via magic link with your email below</p>
          <br/>
         {loading ? (
           'Sending magic link...'

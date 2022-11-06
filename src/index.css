@@ -58,7 +58,8 @@ nav h1 {
   gap: 40px;
 }
 .heading{
-  font-size: 100px;
+  font-size: 500px;
+  font-weight:bold;
 }
 .smoothie-card {
   color: #fff;
@@ -138,4 +139,23 @@ form button {
   border-radius: 6px;
   font-family: "Poppins";
   cursor: pointer;
+}
+.row
+{position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  background-image: url('./assets/gym.png');
+ /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.text
+{
+  color: #fff;
 }

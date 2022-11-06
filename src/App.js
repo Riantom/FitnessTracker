@@ -10,6 +10,7 @@ import Navi from "./components/Navi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   const [session, setSession] = useState(null)
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
     <BrowserRouter>
       <Navi/>
       <Routes>
+      <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/:id" element={<Update />} />
