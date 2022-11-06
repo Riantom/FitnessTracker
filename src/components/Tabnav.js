@@ -9,7 +9,7 @@ function Tabnav() {
   const [fetchError, setFetchError] = useState(null)
   const [atasks, setActiveTasks] = useState(null)
   const [dtasks, setDoneTasks] = useState(null)
-  const [orderBy, setOrderBy] = useState('date')
+  const [orderBy, setOrderBy] = useState('rating')
 
   const handleDelete = (id) => {
     setActiveTasks(prevTasks => {
@@ -86,7 +86,7 @@ function Tabnav() {
        </div>
        <div className="order-by">
             <p>Order by:</p>
-            <button onClick={() => setOrderBy('date')}>EndDate</button>
+            <button onClick={() => setOrderBy('edate')}>EndDate</button>
             <button onClick={() => setOrderBy('title')}>Title</button>
             <button onClick={() => setOrderBy('rating')}>Priority</button>
           </div>
@@ -109,7 +109,7 @@ function Tabnav() {
         </div>
           <div className="order-by">
             <p>Order by:</p>
-            <button onClick={() => setOrderBy('date')}>EndDate</button>
+            <button onClick={() => setOrderBy('edate')}>EndDate</button>
             <button onClick={() => setOrderBy('title')}>Title</button>
             <button onClick={() => setOrderBy('rating')}>Priority</button>
           </div>

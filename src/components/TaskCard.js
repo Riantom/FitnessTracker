@@ -36,8 +36,9 @@ const TaskCard = ({ task, onDelete }) => {
   return (
     <div className="smoothie-card">
       <h3>{task.title}</h3>
-      <p>{task.method}</p>
-      <p>Date:{task.date}</p>
+      <p>{task.method}</p><br/>
+      <p>Start Date:{task.sdate}<br/>
+      End Date:{task.edate}</p>
       <div className="rating">{task.rating}</div>
       <div className="buttons">
         <Link to={"/" + task.id}>
