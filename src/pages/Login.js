@@ -1,38 +1,49 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import  supabase  from '../config/supabaseClient'
 
-import { Link } from 'react-router-dom'
+export default function Login() {
+  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('')
 
-const Login= () => {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-
-  async function handleSubmit(e) {
+  const handleLogin = async (e) => {
     e.preventDefault()
 
-    // @TODO: add login logic
+    try {
+      setLoading(true)
+      const { error } = await supabase.auth.signInWithOtp({ email })
+      if (error) throw error
+      alert('Check your email for the login link!')
+    } catch (error) {
+      alert(error.error_description || error.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="input-email">Email</label>
-        <input id="input-email" type="email" ref={emailRef} />
-
-        <label htmlFor="input-password">Password</label>
-        <input id="input-password" type="password" ref={passwordRef} />
-
-        <br />
-
-        <button type="submit">Login</button>
-      </form>
-      <br />
-
-
-{/* Add this 👇 */}
-<p>
-  Don't have an account? <Link to="/signup">Sign Up</Link>
-</p>
-    </>
+    <div className="row flex-center flex">
+      <div className="col-6 form-widget" aria-live="polite">
+        <h1>Fitness Tracker</h1>
+        <p className="description">Sign in via magic link with your email below</p>
+        {loading ? (
+          'Sending magic link...'
+        ) : (
+          <form onSubmit={handleLogin}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              className="inputField"
+              type="email"
+              placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <button className="button block" aria-live="polite">
+              Send magic link
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
   )
 }
-export default Login
