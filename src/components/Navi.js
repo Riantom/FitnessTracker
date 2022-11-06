@@ -1,3 +1,4 @@
+import React, { useState,useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,7 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import  supabase  from "../config/supabaseClient";
-import React, { useState,useEffect } from "react";
 
 function OffcanvasExample() {
   const [session, setSession] = useState(null)
